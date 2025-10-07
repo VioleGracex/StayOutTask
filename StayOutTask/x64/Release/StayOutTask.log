@@ -1,0 +1,8 @@
+﻿  entry_utils.cpp
+  StayOutTask.cpp
+  test_units.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 589 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  StayOutTask.vcxproj -> D:\C++\StayOutTask\x64\Release\StayOutTask.exe
