@@ -25,7 +25,6 @@ std::vector<TestResult> test_sorting() {
         {L"Jane", L"Smith", L"5556789"}
     };
 
-    // Sort by firstName (Cyrillic before Latin)
     std::sort(entries.begin(), entries.end(), [](const Entry& a, const Entry& b) {
         return russian_english_compare(a.firstName, b.firstName);
         });
@@ -37,7 +36,7 @@ std::vector<TestResult> test_sorting() {
         entries.back().firstName == L"John" || entries.back().firstName == L"Jane" || entries.back().firstName == L"Олег",
         L"John/Jane/Олег", entries.back().firstName });
 
-    // Sort by lastName (Cyrillic before Latin)
+
     std::sort(entries.begin(), entries.end(), [](const Entry& a, const Entry& b) {
         return russian_english_compare(a.lastName, b.lastName);
         });
@@ -49,7 +48,7 @@ std::vector<TestResult> test_sorting() {
         entries.back().lastName == L"Smith" || entries.back().lastName == L"Сидоров",
         L"Smith/Сидоров", entries.back().lastName });
 
-    // Sort by phone
+
     std::sort(entries.begin(), entries.end(), [](const Entry& a, const Entry& b) {
         return russian_english_compare(a.phone, b.phone);
         });
@@ -64,7 +63,6 @@ std::vector<TestResult> test_sorting() {
     return results;
 }
 
-// Returns true if all tests pass
 bool run_tests() {
     int oldMode = _setmode(_fileno(stdout), _O_U16TEXT); (void)oldMode;
     std::vector<TestResult> sortResults = test_sorting();
