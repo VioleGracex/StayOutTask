@@ -71,12 +71,12 @@ int wmain(int argc, wchar_t* argv[]) {
                 retryInput = trim(retryInput);
                 if (retryInput == L"n" || retryInput == L"N") {
                     again = false;
-                    break; // exit the main loop
+                    break; 
                 }
                 if (!retryInput.empty()) {
                     inputFile = retryInput;
                 }
-                continue; // retry input
+                continue; 
             }
             inputFileFound = true;
         }
@@ -108,7 +108,7 @@ int wmain(int argc, wchar_t* argv[]) {
         in.open(inputFile);
         if (!in.is_open()) {
             std::wcerr << L"Ошибка: не удалось открыть файл " << inputFile << std::endl;
-            continue; // вместо break: позволяем пользователю попробовать снова
+            continue; 
         }
 
         std::vector<Entry> entries;
@@ -143,7 +143,7 @@ int wmain(int argc, wchar_t* argv[]) {
         out.open(outputFile);
         if (!out.is_open()) {
             std::wcerr << L"Ошибка: не удалось открыть файл для записи " << outputFile << std::endl;
-            continue; // вместо break: позволяем пользователю попробовать снова
+            continue; 
         }
 
         if (sortType == 1) {
